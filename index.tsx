@@ -11,16 +11,20 @@ interface AppState {
   name: string;
 }
 
+// ------------ THEME COLOR ---------------------
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#039be5"
+      main: "#26a69a"
     },
     secondary: {
       main: "#fffff0"
     }
   }
 });
+
+// -----------------------------------------------
 
 class App extends Component<AppProps, AppState> {
   constructor(props) {
@@ -35,7 +39,6 @@ class App extends Component<AppProps, AppState> {
       <ThemeProvider theme={theme}>
         <div style={{ width: "100%" }}>
           <PrimaryNavBar />
-
           <Hello name={this.state.name} />
         </div>
       </ThemeProvider>
