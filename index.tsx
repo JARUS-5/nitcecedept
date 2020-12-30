@@ -5,6 +5,7 @@ import "./style.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import PrimaryNavBar from "./NavigBar/Nvgbar";
+import PrimaryCarousel from "./Carouselfold/CarouselComp";
 
 interface AppProps {}
 interface AppState {
@@ -37,8 +38,9 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div style={{ width: "100%" }}>
+        <div id="bg" style={{ width: "100%" }}>
           <PrimaryNavBar />
+          <PrimaryCarousel />
           <Hello name={this.state.name} />
         </div>
       </ThemeProvider>

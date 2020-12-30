@@ -22,6 +22,17 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "0px",
       marginBottom: "0px",
       size: "20px"
+    },
+    logo: {
+      height: "100px",
+      filter: "invert(100%)"
+    },
+    groupa: {
+      paddingLeft: "24px",
+      width: "100%"
+    },
+    headinga: {
+      marginBottom: "5px"
     }
   })
 );
@@ -64,7 +75,15 @@ export default function PrimaryNavBar() {
       <AppBar position="static">
         <Toolbar>
           <div>
-            <h2>DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</h2>
+            <img
+              className={classes.logo}
+              src="https://upload.wikimedia.org/wikipedia/en/d/d0/National_Institute_of_Technology%2C_Calicut_Logo.png"
+            />
+          </div>
+          <div className={classes.groupa}>
+            <h2 className={classes.headinga}>
+              DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
+            </h2>
             <div>
               <p className={classes.nitc}>
                 NATIONAL INSTITUTE OF TECHNOLOGY CALICUT
