@@ -3,9 +3,12 @@ import { render } from "react-dom";
 import Hello from "./Hello";
 import "./style.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
+import PrimaryDepro from "./DepProfold/Depro";
 
 interface AppProps {}
 interface AppState {
@@ -40,7 +43,17 @@ class App extends Component<AppProps, AppState> {
       <ThemeProvider theme={theme}>
         <div id="bg" style={{ width: "100%" }}>
           <PrimaryNavBar />
-          <PrimaryCarousel />
+          <div id="carsa">
+            <PrimaryCarousel />
+          </div>
+          <Box id="botcardsa" display="flex">
+            <div id="lmain">
+              <PrimaryDepro />
+            </div>
+            <div>
+              <PrimaryDepro />
+            </div>
+          </Box>
           <Hello name={this.state.name} />
         </div>
       </ThemeProvider>

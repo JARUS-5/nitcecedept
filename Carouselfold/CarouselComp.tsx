@@ -6,7 +6,7 @@ export default function PrimaryCarousel() {
   return (
     <CarouselProvider
       naturalSlideWidth={100}
-      naturalSlideHeight={54}
+      naturalSlideHeight={50}
       totalSlides={3}
       isPlaying={true}
       infinite={true}

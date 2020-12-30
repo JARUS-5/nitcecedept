@@ -9,6 +9,20 @@ body {
   height: 100%;
 }
 
+#botcardsa {
+  position: relative;
+  bottom: 20px;
+}
+
+#carsa {
+  box-shadow: 0px 10px 5px gray;
+}
+
+#lmain {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 #bg {
   height: 100%;
   background-repeat: no-repeat;
