@@ -11,6 +11,7 @@ import PrimaryCarousel from "./Carouselfold/CarouselComp";
 import PrimaryDepro from "./DepProfold/Depro";
 import Primaryqlinks from "./Qlinksfold/Qlinks";
 import Primarynews from "./Newsfold/Newsindex";
+import Primarymv from "./Mandvfold/MandV";
 
 interface AppProps {}
 interface AppState {
@@ -54,13 +55,16 @@ class App extends Component<AppProps, AppState> {
                 <PrimaryDepro />
               </div>
               <div id="rmain">
-              <div id="qlinksindex">
-                <Primaryqlinks />
+                <div id="qlinksindex">
+                  <Primaryqlinks />
                 </div>
                 <div id="newsindex">
-                <Primarynews />
+                  <Primarynews />
                 </div>
               </div>
+            </Box>
+            <Box display="flex">
+              <Primarymv />
             </Box>
           </div>
           <Hello name={this.state.name} />
