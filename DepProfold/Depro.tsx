@@ -4,20 +4,12 @@ import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    headingb: {
-      marginBottom: "5px"
-    }
-  })
-);
-
 export default function PrimaryDepro() {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
-    <Card>
+    <Card className="pdbga">
       <CardContent>
-        <Typography variant="h2">Department Profile</Typography>
+        <Typography variant="h3">Department Profile</Typography>
         <p>
           The Department of Electronics and Communication Engineering, National
           Institute of Technology, Calicut, is involved in providing quality

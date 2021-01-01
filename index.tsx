@@ -9,6 +9,8 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
 import PrimaryDepro from "./DepProfold/Depro";
+import Primaryqlinks from "./Qlinksfold/Qlinks";
+import Primarynews from "./Newsfold/Newsindex";
 
 interface AppProps {}
 interface AppState {
@@ -46,14 +48,21 @@ class App extends Component<AppProps, AppState> {
           <div id="carsa">
             <PrimaryCarousel />
           </div>
-          <Box id="botcardsa" display="flex">
-            <div id="lmain">
-              <PrimaryDepro />
-            </div>
-            <div>
-              <PrimaryDepro />
-            </div>
-          </Box>
+          <div id="botcardsa">
+            <Box display="flex">
+              <div id="lmain">
+                <PrimaryDepro />
+              </div>
+              <div id="rmain">
+              <div id="qlinksindex">
+                <Primaryqlinks />
+                </div>
+                <div id="newsindex">
+                <Primarynews />
+                </div>
+              </div>
+            </Box>
+          </div>
           <Hello name={this.state.name} />
         </div>
       </ThemeProvider>
