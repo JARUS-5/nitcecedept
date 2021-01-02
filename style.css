@@ -22,7 +22,7 @@ body {
   box-shadow: 0px 10px 5px gray;
 }
 
-.qlinksa {
+#qlinksa {
   background-color: #26a69a;
   color: #fffff0;
 }
@@ -45,6 +45,18 @@ body {
   margin-left: 20px;
   margin-right: 40px;
   width: 30%;
+}
+
+#mobdepro {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#mv {
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 #bg {

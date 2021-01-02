@@ -5,6 +5,7 @@ import "./style.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { isMobile } from "react-device-detect";
 
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
@@ -12,6 +13,8 @@ import PrimaryDepro from "./DepProfold/Depro";
 import Primaryqlinks from "./Qlinksfold/Qlinks";
 import Primarynews from "./Newsfold/Newsindex";
 import Primarymv from "./Mandvfold/MandV";
+import MobileNavBar from "./NavigBar/Mobnvgbar";
+import Primaryfooter from "./Footerfold/Footer";
 
 interface AppProps {}
 interface AppState {
@@ -41,9 +44,20 @@ class App extends Component<AppProps, AppState> {
     };
   }
 
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
+  renderChoose = () => {
+    if (isMobile) {
+      return (
+        <div style={{ width: "100%" }}>
+          <MobileNavBar />
+          <div id="bg" style={{ width: "100%" }}>
+            <div id="mobdepro">
+              <PrimaryDepro />
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return (
         <div id="bg" style={{ width: "100%" }}>
           <PrimaryNavBar />
           <div id="carsa">
@@ -63,14 +77,20 @@ class App extends Component<AppProps, AppState> {
                 </div>
               </div>
             </Box>
-            <Box display="flex">
-              <Primarymv />
-            </Box>
+            <div id="mv">
+              <Box display="flex">
+                <Primarymv />
+              </Box>
+            </div>
           </div>
-          <Hello name={this.state.name} />
+          <Primaryfooter />
         </div>
-      </ThemeProvider>
-    );
+      );
+    }
+  };
+
+  render() {
+    return <ThemeProvider theme={theme}>{this.renderChoose()}</ThemeProvider>;
   }
 }
 

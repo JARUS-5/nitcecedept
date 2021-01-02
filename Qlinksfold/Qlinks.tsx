@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 
 export default function Primaryqlinks() {
   return (
-    <Card className="qlinksa">
+    <Card id="qlinksa">
       <CardContent>
         <Typography variant="h3">Quick Links</Typography>
         <a href="http://nic.ac.in/">NITC Home Page</a>

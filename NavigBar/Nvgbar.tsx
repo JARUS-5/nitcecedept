@@ -1,18 +1,10 @@
 import React from "react";
-import {
-  fade,
-  makeStyles,
-  Theme,
-  createStyles
-} from "@material-ui/core/styles";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
@@ -44,30 +36,14 @@ export default function PrimaryNavBar() {
   const [anchorEl3, setAnchorEl3] = React.useState<null | HTMLElement>(null);
   const [anchorEl4, setAnchorEl4] = React.useState<null | HTMLElement>(null);
 
-  const handleClick1 = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl1(event.currentTarget);
-  };
-  const handleClick2 = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl2(event.currentTarget);
-  };
-  const handleClick3 = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl3(event.currentTarget);
-  };
-  const handleClick4 = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl4(event.currentTarget);
+  const handleClick = (obj: any) => (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    obj(event.currentTarget);
   };
 
-  const handleClose1 = () => {
-    setAnchorEl1(null);
-  };
-  const handleClose2 = () => {
-    setAnchorEl2(null);
-  };
-  const handleClose3 = () => {
-    setAnchorEl3(null);
-  };
-  const handleClose4 = () => {
-    setAnchorEl4(null);
+  const handleClose = (obj: any) => () => {
+    obj(null);
   };
 
   return (
@@ -95,7 +71,7 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick1}
+                    onClick={handleClick(setAnchorEl1)}
                     color="secondary"
                   >
                     PROGRAMMES
@@ -105,11 +81,25 @@ export default function PrimaryNavBar() {
                     anchorEl={anchorEl1}
                     keepMounted
                     open={Boolean(anchorEl1)}
-                    onClose={handleClose1}
+                    onClose={handleClose(setAnchorEl1)}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "center"
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "center"
+                    }}
+                    elevation={0}
+                    getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose1}>B.Tech</MenuItem>
-                    <MenuItem onClick={handleClose1}>M.Tech</MenuItem>
-                    <MenuItem onClick={handleClose1}>PhD</MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl1)}>
+                      B.Tech
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl1)}>
+                      M.Tech
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl1)}>PhD</MenuItem>
                   </Menu>
                 </div>
 
@@ -117,7 +107,7 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick2}
+                    onClick={handleClick(setAnchorEl2)}
                     color="secondary"
                   >
                     PEOPLE
@@ -127,11 +117,27 @@ export default function PrimaryNavBar() {
                     anchorEl={anchorEl2}
                     keepMounted
                     open={Boolean(anchorEl2)}
-                    onClose={handleClose2}
+                    onClose={handleClose(setAnchorEl2)}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "center"
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "center"
+                    }}
+                    elevation={0}
+                    getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose2}>FACULTY MEMBERS</MenuItem>
-                    <MenuItem onClick={handleClose2}>STAFF</MenuItem>
-                    <MenuItem onClick={handleClose2}>ADHOC</MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl2)}>
+                      FACULTY MEMBERS
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl2)}>
+                      STAFF
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl2)}>
+                      ADHOC
+                    </MenuItem>
                   </Menu>
                 </div>
 
@@ -139,7 +145,7 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick3}
+                    onClick={handleClick(setAnchorEl3)}
                     color="secondary"
                   >
                     RESEARCH
@@ -149,13 +155,27 @@ export default function PrimaryNavBar() {
                     anchorEl={anchorEl3}
                     keepMounted
                     open={Boolean(anchorEl3)}
-                    onClose={handleClose3}
+                    onClose={handleClose(setAnchorEl3)}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "center"
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "center"
+                    }}
+                    elevation={0}
+                    getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose3}>
+                    <MenuItem onClick={handleClose(setAnchorEl3)}>
                       AREAS OF RESEARCH
                     </MenuItem>
-                    <MenuItem onClick={handleClose3}>ONGOING</MenuItem>
-                    <MenuItem onClick={handleClose3}>Lorem </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl3)}>
+                      ONGOING
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl3)}>
+                      Lorem{" "}
+                    </MenuItem>
                   </Menu>
                 </div>
 
@@ -163,7 +183,7 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick4}
+                    onClick={handleClick(setAnchorEl4)}
                     color="secondary"
                   >
                     FACILITIES
@@ -173,11 +193,25 @@ export default function PrimaryNavBar() {
                     anchorEl={anchorEl4}
                     keepMounted
                     open={Boolean(anchorEl4)}
-                    onClose={handleClose4}
+                    onClose={handleClose(setAnchorEl4)}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "center"
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "center"
+                    }}
+                    elevation={0}
+                    getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose4}>lore</MenuItem>
-                    <MenuItem onClick={handleClose4}>m ipsem</MenuItem>
-                    <MenuItem onClick={handleClose4}>as</MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      lore
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      m ipsem
+                    </MenuItem>
+                    <MenuItem onClick={handleClose(setAnchorEl4)}>as</MenuItem>
                   </Menu>
                 </div>
               </Box>
